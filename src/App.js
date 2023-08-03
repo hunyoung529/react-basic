@@ -7,11 +7,11 @@ import {Link,BrowserRouter,Route,Routes} from 'react-router-dom';
 import Not from './page/Not';
 import Router from './page/Router';
 import StateProps from './page/StateProps';
-
+import GitDeploy from './page/GitDeploy';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/react-basic'>
       <div className="wrap">
         <header>
           <nav>
@@ -20,6 +20,7 @@ function App() {
             <Link to="/img"> IMAGE 활용 </Link>
             <Link to="/router" state='a100'> Router(페이지이동) </Link>
             <Link to="/props"> State&Props </Link>
+            <Link to="/gitDeploy"> Github Deploy</Link>
           </nav>
         </header>
         <main>
@@ -30,6 +31,7 @@ function App() {
             <Route path='/router' element={ <Router/> }  />
             <Route path='/props' element={ <StateProps data='1000' name='props' /> }  />
             <Route path='/*' element={ <Not/> }  />
+            <Route path='/gitDeploy' element={<GitDeploy/>}></Route>
           </Routes>  
         </main>
       </div>
